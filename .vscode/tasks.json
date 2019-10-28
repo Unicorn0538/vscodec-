@@ -1,38 +1,11 @@
 {
-// 有关 tasks.json 格式的文档，请参见
-    // https://go.microsoft.com/fwlink/?LinkId=733558
-   /* "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "cpp.exe build active file",
-            "command": "C:\\mingw64\\bin\\cpp.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "C:\\mingw64\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]*/
-
 
     "version": "2.0.0",    
     "tasks": [        
         {            
             "type": "shell",            
             "label": "g++", //这里注意一下，见下文            
-            "command": "C:\\mingw64\\bin\\g++.exe",            
+            "command": "C:\\MinGw\\bin\\g++.exe",            
             "args": 
             [                
                 "-g",                
@@ -41,11 +14,25 @@
                 "${fileDirname}\\build\\${fileBasenameNoExtension}.exe"            
             ],            
             "options": {                
-                "cwd": "C:\\mingw64\\bin"           
+                "cwd": "C:\\MinGW\\bin"           
              },            
-             "problemMatcher": [               
-                  "$gcc"           
-            ]        
+             "problemMatcher": {               
+                 // "$gcc",
+                  "owner": "cpp",        
+                  "fileLocation": [            
+                      "relative",            
+                      "\\"        
+                      ],        
+                      "pattern": {            
+                          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",            
+                          "file": 1,            
+                          "line": 2,            
+                          "column": 3,            
+                          "severity": 4,            
+                          "message": 5        
+                        }
+             
+                    }        
         }    
     ]
        
