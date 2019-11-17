@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "cStandard": "c89",
+            "cppStandard": "c++20"
+        }
+    ],
+    "version": 4
+}
